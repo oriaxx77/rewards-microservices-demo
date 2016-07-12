@@ -14,13 +14,13 @@ zuul:
   routes:
     projectheartbeat:
       path: /projectheartbet/**
-      strip-prefix: false
+      strip-prefix: true
     product-service:
       path: /product-service/**
-      strip-prefix: false
+      strip-prefix: true
     shop-service: 
       path: /shop-service/**
-      strip-prefix: false  
+      strip-prefix: true  
 eureka:
   client:
     service-url: 

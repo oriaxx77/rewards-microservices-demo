@@ -6,6 +6,7 @@ import java.net.URISyntaxException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
@@ -28,6 +29,9 @@ public class ShopService {
 	// private RestTemplate restTemplate = new RestTemplate();
 	@Autowired
 	private RestTemplate restTemplate;
+	
+	@Value("${shop-service.hello-message}")
+	String helloMessage;
 
 //	@Bean
 //	@LoadBalanced
@@ -39,6 +43,11 @@ public class ShopService {
 	
 //	@Autowired
 //    private LoadBalancerClient loadBalancer;
+	
+	
+	public String hello(){
+		return helloMessage;
+	}
 	
 	@HystrixCommand(fallbackMethod = "defaultHome")
 	public String home() throws RestClientException, URISyntaxException{

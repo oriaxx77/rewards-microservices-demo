@@ -38,7 +38,7 @@ public class ShopServiceApplication {
 		return new RestTemplate();
 	}
 	
-	@RequestMapping
+//	@RequestMapping
 //	public String home( @RequestHeader(value="Authorization") String authorizationHeader,
 //						Principal currentUser) throws RestClientException, URISyntaxException {
 //		LOG.info("ShopService: User={}, Auth={}, called with productId={}", currentUser.getName(), authorizationHeader);
@@ -46,9 +46,18 @@ public class ShopServiceApplication {
 //	}
 	
 
+	@RequestMapping( "/hello" )
+	public String hello(){
+		return shopService.hello();
+	}
+	
+	
+	@RequestMapping( "/home" )
 	public String home() throws RestClientException, URISyntaxException {
 		return shopService.home();
 	}
+	
+	
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ShopServiceApplication.class, args);
