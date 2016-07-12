@@ -1,0 +1,15 @@
+shop-service:
+  hello-message: Hi there from config-server config.
+  
+eureka:
+  client:
+    service-url: 
+      default-zone: http://localhost:8761/eureka/
+      
+      
+security:
+  basic:
+    enabled: false
+management:
+  security:
+    enabled: false

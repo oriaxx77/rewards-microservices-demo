@@ -1,0 +1,37 @@
+info:
+  component: Zuul Server
+  
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+zuul:
+  ignored-services: "*"
+  routes:
+    projectheartbeat:
+      path: /projectheartbet/**
+      strip-prefix: false
+    product-service:
+      path: /product-service/**
+      strip-prefix: false
+    shop-service: 
+      path: /shop-service/**
+      strip-prefix: false  
+eureka:
+  client:
+    service-url: 
+      default-zone: http://localhost:8761/eureka/
+       
+    
+
+server:
+  port: 8765
+  
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: INFO
