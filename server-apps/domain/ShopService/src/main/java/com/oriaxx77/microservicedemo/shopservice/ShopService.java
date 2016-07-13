@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
@@ -48,6 +49,7 @@ public class ShopService {
 	public String hello(){
 		return helloMessage;
 	}
+	
 	
 	@HystrixCommand(fallbackMethod = "defaultHome")
 	public String home() throws RestClientException, URISyntaxException{

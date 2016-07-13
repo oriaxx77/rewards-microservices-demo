@@ -8,4 +8,5 @@ spring:
         git:
           uri: https://github.com/oriaxx77/rewards-microservices-demo
           searchPaths: server-config
+          
   
